@@ -1,0 +1,30 @@
+import {
+  BsCloud,
+  BsCloudLightning,
+  BsCloudRain,
+  BsCloudSnow,
+  BsMoon,
+  BsSun,
+  BsWater,
+} from "react-icons/bs";
+
+export const weatherIconMap = {
+  "01d": <BsSun />,
+  "01n": <BsMoon />,
+  "02d": <BsSun />,
+  "02n": <BsMoon />,
+  "03d": <BsCloud />,
+  "03n": <BsCloud />,
+  "04d": <BsCloud />,
+  "04n": <BsCloud />,
+  "09d": <BsCloudRain />,
+  "09n": <BsCloudRain />,
+  "10d": <BsCloudRain />,
+  "10n": <BsCloudRain />,
+  "11d": <BsCloudLightning />,
+  "11n": <BsCloudLightning />,
+  "13d": <BsCloudSnow />,
+  "13n": <BsCloudSnow />,
+  "50d": <BsWater />,
+  "50n": <BsWater />,
+};
