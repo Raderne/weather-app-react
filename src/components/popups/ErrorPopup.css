@@ -1,0 +1,28 @@
+.error {
+  position: absolute;
+  /* top: 10px; */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(226, 42, 42, 0.8);
+  padding: 10px 25px;
+  border-radius: 20px;
+  animation: dropIn 1s forwards;
+}
+
+@keyframes dropIn {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 10px;
+  }
+}
+
+@keyframes dropOut {
+  from {
+    top: 10px;
+  }
+  to {
+    top: -100%;
+  }
+}

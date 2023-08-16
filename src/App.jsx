@@ -2,14 +2,15 @@ import "./App.css";
 import { useEffect, useState } from "react";
 import MainInfo from "./components/mainInfo/MainInfo";
 import DetailsInfo from "./components/detailsInfo/DetailsInfo";
+import ErrorPopup from "./components/popups/ErrorPopup";
 
 const App = () => {
   const [data, setData] = useState([]);
   const [location, setLocation] = useState("rabat");
   const [locationToDisplay, setLocationToDisplay] = useState("rabat");
+  const [error, setError] = useState(false);
   const [temperature, setTemperature] = useState(0);
   const [description, setDescription] = useState("");
-  // set error state when 404
   // set picture
 
   const fetchWeatherData = async (loc) => {
@@ -24,8 +25,9 @@ const App = () => {
       setTemperature(data.list[0].main.temp);
       setDescription(data.list[0].weather[0].description);
       setData([...data.list]);
+      setError(false);
     } catch (error) {
-      console.log(error);
+      setError(true);
     }
   };
   useEffect(() => {
@@ -33,22 +35,25 @@ const App = () => {
   }, []);
 
   return (
-    <div className="container">
-      <MainInfo
-        temperature={temperature}
-        description={description}
-        location={locationToDisplay}
-        main={{ ...data[0]?.main }}
-      />
+    <>
+      {error && <ErrorPopup setError={setError} />}
+      <div className="container">
+        <MainInfo
+          temperature={temperature}
+          description={description}
+          location={locationToDisplay}
+          main={{ ...data[0]?.main }}
+        />
 
-      <DetailsInfo
-        location={location}
-        fetchWeatherData={fetchWeatherData}
-        setLocation={setLocation}
-        setLocationToDisplay={setLocationToDisplay}
-        data={data}
-      />
-    </div>
+        <DetailsInfo
+          location={location}
+          fetchWeatherData={fetchWeatherData}
+          setLocation={setLocation}
+          setLocationToDisplay={setLocationToDisplay}
+          data={data}
+        />
+      </div>
+    </>
   );
 };
 
