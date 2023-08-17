@@ -224,7 +224,7 @@
   }
   .container .main-info {
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     transform: scale(1) perspective(0);
     border-radius: 0;
     overflow: hidden;
@@ -237,7 +237,7 @@
   }
   .main-info .today-info {
     margin-top: 0;
-    top: 30%;
+    top: 20%;
     transform: translateY(-50%);
   }
   .today-info h2 {
