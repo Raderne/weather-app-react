@@ -11,7 +11,6 @@ const App = () => {
   const [error, setError] = useState(false);
   const [temperature, setTemperature] = useState(0);
   const [description, setDescription] = useState("");
-  // set picture
 
   const fetchWeatherData = async (loc) => {
     const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${loc}&appid=${

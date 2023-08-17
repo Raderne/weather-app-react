@@ -18,3 +18,9 @@ body {
   align-items: center;
   background-color: #37474f;
 }
+
+@media (max-width: 600px) {
+  body{
+    display: block;
+  }
+}

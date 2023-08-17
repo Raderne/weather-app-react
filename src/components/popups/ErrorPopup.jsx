@@ -10,7 +10,7 @@ const ErrorPopup = ({ setError }) => {
       popupRef.current.style.animation = "dropOut 1s forwards";
       setTimeout(() => {
         setError(false);
-      }, 3600);
+      }, 3800);
     }, 3000);
 
     return () => clearTimeout(timeoutId);

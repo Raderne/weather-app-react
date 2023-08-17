@@ -15,8 +15,8 @@ const DetailsInfo = ({
 
   const handleClick = () => {
     if (location === "") return;
-    setLocationToDisplay(location);
-    fetchWeatherData(location);
+    setLocationToDisplay(location.trim());
+    fetchWeatherData(location.trim());
   };
 
   const handleChange = (e) => {
@@ -43,12 +43,16 @@ const DetailsInfo = ({
           const dayAbbreviation = forecastData.toLocaleDateString("en", {
             weekday: "short",
           });
+          const hour = forecastData.toLocaleTimeString("en", {
+            hour: "2-digit",
+          });
           const dayTemp = `${Math.round(item?.main?.temp)}°C`;
           const iconCode = item?.weather[0]?.icon;
 
           if (
             forecastData.getDate() !== today.getDate() &&
-            !uniqueDays.has(dayAbbreviation)
+            !uniqueDays.has(dayAbbreviation) &&
+            hour === "12 PM"
           ) {
             uniqueDays.add(dayAbbreviation);
             return (

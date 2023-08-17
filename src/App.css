@@ -121,6 +121,8 @@
   border: 1px solid #fff;
   border-radius: 10px 0 0 10px;
   padding: 5px 15px;
+  text-transform: uppercase;
+  font-size: 1.3rem;
 }
 .search-container .loc-button {
   padding: 5px 10px;
@@ -178,10 +180,11 @@
   list-style: none;
   margin: 10px 35px;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
 }
 
 .days-list li {
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  margin: 0 4px;
   padding: 20px;
   cursor: pointer;
   display: flex;
@@ -207,4 +210,69 @@
 .days-list li .day-temp {
   font-weight: 700;
   margin-top: 6px;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    height: initial;
+    gap: 0;
+    border-radius: 0;
+    background-color: inherit;
+    box-shadow: none;
+    position: relative;
+  }
+  .container .main-info {
+    width: 100%;
+    height: 100vh;
+    transform: scale(1) perspective(0);
+    border-radius: 0;
+    overflow: hidden;
+  }
+  .main-info:hover {
+    transform: scale(1) perspective(0) rotateY(0);
+  }
+  .pic-gradient {
+    border-radius: 0;
+  }
+  .main-info .today-info {
+    margin-top: 0;
+    top: 30%;
+    transform: translateY(-50%);
+  }
+  .today-info h2 {
+    font-size: 3rem;
+  }
+  .today-info span {
+    font-size: 1rem;
+    padding: 3px 14px;
+  }
+  .today-info h3 {
+    font-size: 1rem;
+  }
+
+  .today-weather {
+    /* width: 100%; */
+    gap: 30px;
+  }
+  .today-weather .weather-temp {
+    font-size: 14rem;
+    justify-content: start;
+  }
+
+  .today-weather .summary h4 {
+    font-size: 1.2rem;
+  }
+  .today-weather .summary p {
+    font-size: 0.8rem;
+  }
+
+  .container .detailed-info {
+    gap: 30px;
+    position: static;
+  }
+  .container .detailed-info .search-container {
+    position: absolute;
+    top: 2%;
+  }
 }
