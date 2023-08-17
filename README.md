@@ -1,5 +1,3 @@
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
 # Weather React App
 
 Welcome to the Weather React App repository! This application provides real-time weather information along with stunning images to enhance your weather-checking experience. It's built using React and leverages the power of the Flickr API for fetching dynamic images that correspond to the current weather conditions, and the OpenWeatherMap API for accurate weather data.
